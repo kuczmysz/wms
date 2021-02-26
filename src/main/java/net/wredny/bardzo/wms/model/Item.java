@@ -4,7 +4,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Document
 @Data
@@ -15,4 +14,21 @@ public class Item extends BaseEntity {
 		this.setName(name);
 		this.setCode(code);
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		return super.hashCode();
+	}
+
 }

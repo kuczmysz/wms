@@ -6,7 +6,4 @@ import net.wredny.bardzo.wms.model.Item;
 import reactor.core.publisher.Flux;
 
 public interface ItemReactiveRepository extends ReactiveCrudRepository<Item, String> {
-
-	public Flux<Item> findAllByName(String name);
-	
 }

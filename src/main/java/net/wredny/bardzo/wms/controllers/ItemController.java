@@ -34,12 +34,6 @@ class ItemController {
 		Flux<Item> items = repository.findAll();
 		return items;
 	}
-
-//
-//	@GetMapping(path = "/all", produces = "text/event-stream")
-//	public Flux<Item> getLive() {
-//		return repository.findAll();
-//	}
 	
 	@PostMapping
 	public Mono<Item> save(@RequestBody Item item) {
@@ -57,8 +51,4 @@ class ItemController {
 		return repository.saveAll(items);
 	}
 
-//	@PostMapping(path = "/all", consumes = "application/stream+json")
-//	public void saveAllLive(@RequestBody Flux<Item> items) {
-//		repository.saveAll(items);
-//	}
 }
